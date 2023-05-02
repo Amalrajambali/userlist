@@ -1,0 +1,21 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "16.20.0",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.9.1"
+    },
+    "version": "1.17.1",
+    "libraryName": "global-web",
+    "libraryId": "98bd8f2c-07ba-4141-8d05-9b82eceac1b6",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "Global-web",
+    "solutionShortDescription": "Global-web description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}
