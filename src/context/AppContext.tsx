@@ -10,13 +10,14 @@ import "@pnp/sp/items";
 
 
 interface IUserdata {
-  Id?:number;
+  Id?: number;
   name: string;
   department: string,
   designation: string
   city: string,
   email: string,
-  phone:number
+  phone: number,
+  imageUrl?:string
 }
 interface ISearchData {
   name: string,
@@ -24,7 +25,8 @@ interface ISearchData {
   designation: string
   city: string,
   email: string,
-  phone:number
+  phone: number,
+  imageUrl?:string
 }
 
 interface MyContextType {
@@ -32,7 +34,7 @@ interface MyContextType {
   setUserData: React.Dispatch<React.SetStateAction<IUserdata[]>>,
   search: ISearchData[],
   setSearch: React.Dispatch<React.SetStateAction<ISearchData[]>>,
-  getAllUsers:Function
+  getAllUsers: Function
 }
 
 
@@ -60,7 +62,7 @@ function AppContext({ children }: { children: ReactNode }) {
   const [search, setSearch] = useState<ISearchData[]>([]);
 
 
-  return <UsersContext.Provider value={{ userData, setUserData, search, setSearch ,getAllUsers}}>
+  return <UsersContext.Provider value={{ userData, setUserData, search, setSearch, getAllUsers }}>
     {children}
   </UsersContext.Provider>
 }

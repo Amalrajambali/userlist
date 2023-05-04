@@ -4,7 +4,8 @@ import HomePage from '../../../pages/HomePage';
 import UserPage from '../../../pages/UserPage'
 import Header from './Header';
 import { HashRouter as Router,Routes,Route } from 'react-router-dom';
-import SingleUser from './SingleUser';
+// import SingleUser from './SingleUser';
+import SingleuserPage from '../../../pages/SingleuserPage';
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
         <Routes>
         <Route path="/" element={<HomePage/>}/>
         <Route path="/adduser" element={<UserPage/>}/>
-        <Route path="/user/:id" element={<SingleUser/>}/>
+        <Route path="/user/:id" element={<SingleuserPage/>}/>
        </Routes>
        </Router>
     </div>

@@ -14,7 +14,7 @@ let initialState = {
     designation: "",
     city: "",
     Title: "",
-    phone:0
+    phone: 0
 }
 
 
@@ -30,10 +30,15 @@ function AddUser() {
         e.preventDefault()
 
         if (form.name) {
-            await sp.web.lists.getByTitle("users").items.add(form)
+            const addedUser = await sp.web.lists.getByTitle("users").items.add(form)
             // localStorage.setItem("users", JSON.stringify(context?.userData))
+
+            await sp.web.getFolderByServerRelativePath("usersLibrary").addSubFolderUsingPath(`${addedUser.data.Id}`)
+
             context?.userData.push(form)
-            navigate("/")
+            navigate(`/user/${addedUser.data.Id}`)
+
+
         }
     }
 
@@ -41,9 +46,10 @@ function AddUser() {
     const handleChange = (e: ChangeEvent<HTMLInputElement>): void => {
         const { name: key, value } = e.target;
         setForm({ ...form, [key]: value, Title: "user" });
-
     }
 
+
+    
     return (
 
         <form onSubmit={handleSubmit}>

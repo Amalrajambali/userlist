@@ -12,7 +12,8 @@ interface IUserdata {
     designation: string
     city: string,
     email: string,
-    phone:number
+    phone: number
+    imageUrl:string
 }
 
 
@@ -23,14 +24,14 @@ function UserList() {
     if (!context) return null
     const { search, userData } = context
 
-    
-    let data: any = search.length != 0 ? search :  userData
+
+    let data: any = search.length != 0 ? search : userData
 
     const renderUsers = data?.map((user: IUserdata) => {
         return (
             <div className="card col-md-3" style={{ marginRight: "10px", marginTop: "26px", textDecoration: "none" }} >
                 <Link to={`/user/${user.Id}`}>
-                    <img className="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Windows_10_Default_Profile_Picture.svg/2048px-Windows_10_Default_Profile_Picture.svg.png" alt="Card image cap" />
+                    <img className="card-img-top" src={user?.imageUrl?user.imageUrl:"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Windows_10_Default_Profile_Picture.svg/2048px-Windows_10_Default_Profile_Picture.svg.png"}  alt="Card image cap" style={{height:"270px",borderRadius:"50%"}}/>
                     <div className="card-body">
                         <h5 className="card-title">{user.name}</h5>
                         <div className="cardData">

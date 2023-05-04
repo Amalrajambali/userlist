@@ -19,7 +19,7 @@ export default class GlobalClient extends React.Component<IGlobalClientProps, {}
         <AppContext>
           <Main/>
           </AppContext>
-      </Layout>
+     </Layout> 
     );
   }
 }
